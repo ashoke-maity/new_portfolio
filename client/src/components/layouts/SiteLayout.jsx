@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import profilePic from '../../assets/my_passport_pic.png';
 
 function SiteLayout() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,28 +28,26 @@ function SiteLayout() {
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <p>© {new Date().getFullYear()} all rights reserved.</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-white">in</a>
-            <a href="#" className="hover:text-white">dr</a>
-            <a href="#" className="hover:text-white">fb</a>
-            <a href="#" className="hover:text-white">ig</a>
-            <a href="#" className="hover:text-white">tw</a>
+            <a href="#" className="hover:text-white">Home</a>
+            <a href="#" className="hover:text-white">Resume</a>
+            <a href="#" className="hover:text-white">Projects</a>
           </div>
         </div>
       </footer>
 
+    {/* sidebar */}
       {isMenuOpen && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50">
           <div className="max-w-6xl mx-auto px-6 py-8 grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
-              <div className="w-24 h-24 rounded-full overflow-hidden bg-white/5" />
+              <div className="w-24 h-30 rounded-full overflow-hidden bg-white/5" >
+              <img src={profilePic} alt="profile picture" />
+              </div>
               <div className="space-y-2 text-neutral-400">
                 <p className="text-2xl leading-snug text-white">Hi, I am Ashoke! I am a developer, editor and designer based on India.</p>
                 <p>Age - 21</p>
                 <p>Country - India</p>
                 <p>Email - ashokemaity092@gmail.com</p>
-                <div className="flex gap-4 pt-2">
-                  <span>in</span><span>dr</span><span>fb</span><span>ig</span><span>tw</span>
-                </div>
               </div>
             </div>
             <div className="flex flex-col">

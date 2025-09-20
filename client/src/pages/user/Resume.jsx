@@ -14,25 +14,28 @@ function Resume() {
         <h1 className="text-6xl font-semibold text-neutral-200">Resume</h1>
       </header>
 
-      <Section title="Contact">
-        Replace with your contact details. Phone, email, and links.
-      </Section>
+      <Section title="Contact">Email: ashokemaity092@gmail.com</Section>
       <Section title="Academic">
-        Add your academic history here. Degree, institution, and year.
+        B.Tech in Computer Science and Engineering from Techno India University
+        (2022-2026)
+        <br />
+        Future Campus School (2020-2022)
+        <br />
+        Techno India Group Public School - Garia (2010-2020)
       </Section>
-      <Section title="Professional / Work">
-        Describe roles, responsibilities, and achievements across positions.
+      <Section title="Work">
+        Intern at Brnd Guru as a Graphic Designer (2025-Present).
       </Section>
       <Section title="Skills">
-        List key skills. Example: React, Node.js, UI/UX, Tailwind, Figma.
+        React, Node.js, Tailwind, Figma, Canva, Adobe Photoshop, Adobe Premiere
+        Pro, Adobe After Effects.
       </Section>
       <Section title="Certificates">
-        Any certifications or recognitions you’d like to highlight.
+        Deloitte data analyst certification, Ethical Hacking Certification
+        course, Python (BASIC), Frontend Developer React certificate
       </Section>
     </div>
   );
 }
 
 export default Resume;
-
-

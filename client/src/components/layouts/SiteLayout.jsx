@@ -28,9 +28,9 @@ function SiteLayout() {
         <div className="flex items-center justify-between gap-4 flex-wrap">
           <p>© {new Date().getFullYear()} all rights reserved.</p>
           <div className="flex gap-4">
-            <a href="#" className="hover:text-white">Home</a>
-            <a href="#" className="hover:text-white">Resume</a>
-            <a href="#" className="hover:text-white">Projects</a>
+            <Link to="/" className="hover:text-white">Home</Link>
+            <Link to="resume" className="hover:text-white">Resume</Link>
+            <Link to="/portfolio" className="hover:text-white">Portfolio</Link>
           </div>
         </div>
       </footer>
@@ -44,10 +44,9 @@ function SiteLayout() {
               <img src={profilePic} alt="profile picture" />
               </div>
               <div className="space-y-2 text-neutral-400">
-                <p className="text-2xl leading-snug text-white">Hi, I am Ashoke! I am a developer, editor and designer based on India.</p>
-                <p>Age - 21</p>
+                <p className="text-2xl leading-snug text-white">Hi, I am Ashoke! I am a Full stack Web developer, editor and designer based on India.</p>
                 <p>Country - India</p>
-                <p>Email - ashokemaity092@gmail.com</p>
+                <p>Contact- ashokemaity092@gmail.com</p>
               </div>
             </div>
             <div className="flex flex-col">
@@ -61,7 +60,7 @@ function SiteLayout() {
               <nav className="mt-6 space-y-6 md:space-y-8">
                 <NavLink onClick={() => setIsMenuOpen(false)} to="/" className={({isActive}) => `block text-5xl md:text-7xl ${isActive ? 'text-rose-300' : 'text-neutral-400 hover:text-white'}`}>Home</NavLink>
                 <NavLink onClick={() => setIsMenuOpen(false)} to="/portfolio" className={({isActive}) => `block text-5xl md:text-7xl ${isActive ? 'text-rose-300' : 'text-neutral-400 hover:text-white'}`}>Portfolio</NavLink>
-                <NavLink onClick={() => setIsMenuOpen(false)} to="/development" className={({isActive}) => `block text-5xl md:text-7xl ${isActive ? 'text-rose-300' : 'text-neutral-400 hover:text-white'}`}>Development</NavLink>
+                <NavLink onClick={() => setIsMenuOpen(false)} to="/Contact" className={({isActive}) => `block text-5xl md:text-7xl ${isActive ? 'text-rose-300' : 'text-neutral-400 hover:text-white'}`}>Contact</NavLink>
                 <NavLink onClick={() => setIsMenuOpen(false)} to="/resume" className={({isActive}) => `block text-5xl md:text-7xl ${isActive ? 'text-rose-300' : 'text-neutral-400 hover:text-white'}`}>Resume</NavLink>
               </nav>
             </div>

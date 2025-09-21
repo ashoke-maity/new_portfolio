@@ -13,7 +13,7 @@ function Home() {
         {/* contact button -- "say hi" */}
         <div className="mt-8">
           <a
-            href="#contact"
+            href="/Contact"
             className="inline-block rounded-full border border-white/20 px-5 py-2.5 hover:bg-white/5"
           >
             Say hi 👋

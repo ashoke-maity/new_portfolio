@@ -32,7 +32,7 @@ function Resume() {
       </Section>
       <Section title="Certificates">
         Deloitte data analyst certification, Ethical Hacking Certification
-        course, Python (BASIC), Frontend Developer React certificate
+        course, Python (BASIC), Frontend Developer React certificate.
       </Section>
     </div>
   );

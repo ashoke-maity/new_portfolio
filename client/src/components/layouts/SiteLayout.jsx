@@ -31,6 +31,7 @@ function SiteLayout() {
             <Link to="/" className="hover:text-white">Home</Link>
             <Link to="resume" className="hover:text-white">Resume</Link>
             <Link to="/portfolio" className="hover:text-white">Portfolio</Link>
+            <Link to="/admin/login" className="hover:text-rose-300 text-rose-300/70">Admin</Link>
           </div>
         </div>
       </footer>

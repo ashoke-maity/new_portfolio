@@ -51,40 +51,9 @@ function Home() {
           design and development.
         </p>
 
-        {/* video cards */}
-        <div className="mt-8 grid md:grid-cols-2 gap-8">
-          <div className="bg-white/5 rounded-lg overflow-hidden">
-            <div className="aspect-[16/10] bg-white/10" />
-            <div className="p-4 flex items-center justify-between">
-              <div className="flex gap-2 text-xs">
-                <span className="rounded-full border border-white/20 px-3 py-1">
-                  Landing Page
-                </span>
-                <span className="rounded-full border border-white/20 px-3 py-1">
-                  UI & UX
-                </span>
-              </div>
-              <button className="text-sm text-neutral-300 hover:text-white">
-                View Project →
-              </button>
-            </div>
-          </div>
-          <div className="bg-white/5 rounded-lg overflow-hidden">
-            <div className="aspect-[16/10] bg-white/10" />
-            <div className="p-4 flex items-center justify-between">
-              <div className="flex gap-2 text-xs">
-                <span className="rounded-full border border-white/20 px-3 py-1">
-                  Landing Page
-                </span>
-                <span className="rounded-full border border-white/20 px-3 py-1">
-                  UI & UX
-                </span>
-              </div>
-              <button className="text-sm text-neutral-300 hover:text-white">
-                View Project →
-              </button>
-            </div>
-          </div>
+        {/* empty state until dynamic data is wired */}
+        <div className="mt-8 text-center text-neutral-400">
+          No featured projects to display yet.
         </div>
 
         <div className="mt-8 text-center">

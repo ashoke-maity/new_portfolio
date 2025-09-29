@@ -4,23 +4,21 @@ const jwt = require('jsonwebtoken');
 // Admin login
 const loginAdmin = async (req, res) => {
   try {
-    const { username, password } = req.body;
+
+    // Accept either 'email' or 'username' as identifier
+    const { email, username, password } = req.body;
 
     // Validate input
-    if (!username || !password) {
+    const identifier = email || username;
+    if (!identifier || !password) {
       return res.status(400).json({
         success: false,
-        message: 'Username and password are required'
+        message: 'Email/username and password are required'
       });
     }
 
-    // Find admin by username or email
-    const admin = await Admin.findOne({
-      $or: [
-        { username: username },
-        { email: username }
-      ]
-    });
+    // Find admin by email only (Admin model does not have username field)
+    const admin = await Admin.findOne({ email: identifier });
 
     if (!admin) {
       return res.status(401).json({
@@ -136,8 +134,57 @@ const verifyToken = async (req, res) => {
   }
 };
 
+// Admin register (backend only)
+const registerAdmin = async (req, res) => {
+  try {
+    const { email, password, role } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email and password are required'
+      });
+    }
+
+    // Check if admin already exists
+    const existingAdmin = await Admin.findOne({ email });
+    if (existingAdmin) {
+      return res.status(409).json({
+        success: false,
+        message: 'Admin with this email already exists'
+      });
+    }
+
+    // Create new admin
+    const newAdmin = new Admin({
+      email,
+      password,
+      role: role || 'admin'
+    });
+    await newAdmin.save();
+
+    res.status(201).json({
+      success: true,
+      message: 'Admin registered successfully',
+      data: {
+        id: newAdmin._id,
+        email: newAdmin.email,
+        role: newAdmin.role,
+        createdAt: newAdmin.createdAt
+      }
+    });
+  } catch (error) {
+    console.error('Register error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Internal server error'
+    });
+  }
+};
+
 module.exports = {
   loginAdmin,
   getAdminProfile,
-  verifyToken
+  verifyToken,
+  registerAdmin
 };

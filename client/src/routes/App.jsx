@@ -10,6 +10,8 @@ import AdminLogin from "../pages/admin/Login";
 import AdminDashboard from "../pages/admin/Dashboard";
 import ProtectedRoute from "../components/admin/ProtectedRoute";
 
+const adminRoute = import.meta.env.VITE_ADMIN_ROUTE || "admin";
+
 function App() {
   return (
     <AdminProvider>
@@ -24,9 +26,9 @@ function App() {
           </Route>
           
           {/* Admin Routes */}
-          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path={`/${adminRoute}/login`} element={<AdminLogin />} />
           <Route 
-            path="/admin/dashboard" 
+            path={`/${adminRoute}/dashboard`} 
             element={
               <ProtectedRoute>
                 <AdminDashboard />

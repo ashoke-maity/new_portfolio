@@ -121,11 +121,7 @@ const AdminLogin = () => {
           </form>
 
           {/* Footer */}
-          <div className="mt-8 text-center">
-            <p className="text-blue-200 text-sm">
-              Default credentials: admin / admin123
-            </p>
-          </div>
+          {/* You can add other footer info here if needed */}
         </div>
       </div>
     </div>

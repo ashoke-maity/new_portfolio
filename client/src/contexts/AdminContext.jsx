@@ -25,9 +25,12 @@ export const AdminProvider = ({ children }) => {
     }
   }, []);
 
+  // Use the same route as backend
+  const ADMIN_ROUTE = '/admin-portal/admin';
+
   const verifyToken = async (token) => {
     try {
-      const response = await fetch('http://localhost:5000/api/admin/verify', {
+      const response = await fetch(`http://localhost:5000${ADMIN_ROUTE}/verify`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -54,14 +57,14 @@ export const AdminProvider = ({ children }) => {
     }
   };
 
-  const login = async (username, password) => {
+  const login = async (emailOrUsername, password) => {
     try {
-      const response = await fetch('http://localhost:5000/api/admin/login', {
+      const response = await fetch(`http://localhost:5000${ADMIN_ROUTE}/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ email: emailOrUsername, password })
       });
 
       const data = await response.json();
